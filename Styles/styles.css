@@ -1,0 +1,406 @@
+* {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    min-width: 350px;
+}
+
+/*Menu*/
+@media screen and (max-width: 999px) {
+.header {
+    width: 100%;
+    height: 44px;
+}
+.nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+.nav-top img {
+    padding: 15px;
+    }
+
+.menulateral {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;/*que se expanda a lo ancho de todo el menu*/
+    top: 54px;
+    z-index: 10;
+    background: #0000EC;
+    margin-left: -150%;
+    transition: ease-in 0.7s;
+}
+
+li {
+    padding: 15px;
+}
+
+li a {
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase; /*para convertir en mayuscula*/
+}
+i {
+    padding: 15px;
+}
+
+label .fa-times {
+    display: none
+}
+#check:checked ~ .menulateral {
+    margin: 0;
+}
+#check:checked ~ label .fa-times {
+    display: block;
+  }
+#check:checked ~ label .fa-bars {
+    display: none;
+ }
+}
+ @media screen and (min-width: 1000px) {
+    .nav-top {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 50px;
+    }
+    input {
+        display: none;
+    }
+    .nav-top label {
+        display: none;
+    }
+    .menulateral {
+        display: flex;
+        list-style: none;
+        
+    }
+    .menulateral li a {
+        list-style: none;
+        padding: 24px;
+        color: #060A24;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    .menulateral li a:hover {
+        color: #00F3BB;
+        text-decoration: line-through;
+    }
+    .menulateral li a:active{
+        color: #060A24;
+        text-decoration: line-through;
+    }
+  }
+ 
+
+
+/*Header*/
+.div0 {
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+#h1 {
+    color: #060A24;
+    font-weight: bold;
+    font-size: 36px;
+    padding-top: 29px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 0px;
+}
+#p1 {
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#p2 {
+    font-size: 16px;
+    padding-top: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.div0 h1 span {
+    color: #0000EC;
+} 
+.boton1 {
+    text-decoration: none;/*ok*/
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px; /*ok*/
+    color: #060A24; /*ok*/
+    background-color: #00F3BB;/*ok*/  
+    width: 100%;
+    height: 48px; 
+    margin-top: 36px;
+    margin-bottom: 24px;
+    align-self: center;
+}
+.boton1:hover{
+    color: #FFFFFF;/*ok*/ 
+    background: linear-gradient(#0000FE, #00F0B8) ;/*ok*/ 
+  }
+  @media screen and (min-width: 1000px) {
+      .div0 {
+        margin: 10px 120px;
+        margin-bottom: 0px;
+      }
+      #h1 {
+          width: 100%;
+          font-size: 64px;
+          line-height: 84px;
+      }
+      #p1 {
+          width: 628px;
+
+      }
+      #p2 {
+        display: none;
+    }
+    .boton1 {
+        width: 226px;
+        height: 56px;
+        align-self: flex-start;
+
+    }
+  }
+  @media screen and (max-width: 999px) {
+    
+     #p1 {
+          display: none;
+      }
+  }
+ 
+/*Episodios*/
+.div1 {
+    clip-path: polygon(0 3%, 100% 0%, 100% 95%, 0% 100%);
+    padding-bottom: 50px; 
+    padding-top: 64px;   
+    background-image: linear-gradient(225deg,#0000FF 0%,#0000A3 100%);
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    width: 100%;
+}
+#episodios {
+    font-size: 36px;
+    color: #FFFFFF;    
+    margin-left: 16px;
+  
+}
+.div1 .pods {
+    display: grid;
+    grid-template-columns: 100%;
+    margin-bottom: 100px;
+}
+@media screen and (min-width: 1000px) {
+.div1 {
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+.div1 .pods {
+    grid-template-columns: 50% 50%;
+    grid-row-gap: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+}
+.div1 .pods iframe {
+    width: 100%;
+    height: 255px;
+    padding: 10px;
+    }
+@media screen and (max-width: 1000px) and (min-width: 350px) {
+    iframe {
+    object-fit: scale-down;  
+}
+} 
+
+/*Nosotros*/
+.div2 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.div2 img{
+    position: relative;
+    align-self: center;
+    width: 320px;
+    height: 519px;
+    margin-top: -120px;
+}
+.textphone {
+    width: auto;
+    padding: 8px 16px;
+}
+#nosotros {
+    font-size: 36px;   
+    
+}
+#p3 {
+    font-size: 14px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+    .div2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 150px;
+    margin-right: 150px;
+    }
+    .div2 img {
+    width: 31.8%;
+    height: 16.9%;
+    }
+    .div2 #nosotros {
+        font-size: 48px;    
+    }
+    #p3 {
+        font-size: 16px;
+        width: 464px;
+        height: 204px; 
+    }
+}
+/*Entrevistas*/
+
+#entrevistas {
+    color: #060A24;
+    font-size: 36px;
+}
+.entrevistadas img {
+    width: 100%;
+}
+.entrevistadas {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-bottom: 100px;    
+}
+@media screen and (min-width: 999px) {
+    .entrevistadas  {
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+    #entrevistas {
+        font-size: 48px;
+    }
+    .div3 figure img {
+        height: 364px;
+        width: 100%;
+    }
+}
+/*Topicos*/
+
+.div4 .temas {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    grid-row-gap: 40px;
+}
+.div4 .temas figure {
+    display: flex;
+    flex-direction: column;
+}
+.div4 .temas figure h2 {
+    padding: 10px;
+    text-align: center;
+}
+#topicos {
+    margin-left: 10px;
+}
+@media screen and (min-width: 1000px) {
+.div4 .temas {
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 100px 0px 50px 0px;
+    	}
+}
+
+.div5 {
+clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+padding-bottom: 50px;
+padding-top: 64px;
+background-image: linear-gradient(225deg,#0000FF 0%,#0000A3 100%);
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+flex-basis: 100%;
+width: 100%;
+}
+
+.div5 h2 {
+    font-size: 36px;
+    color: #FFFFFF;    
+    margin-left: 16px;
+    text-align: center;
+}
+.boton2 {
+    justify-content: center;
+    display: flex;
+    padding-top: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #060A24;
+    background-color: #00F3BB;
+    width: 300px;
+    height: 48px;
+    margin-top: 36px;
+    margin-bottom: 24px;
+    }
+    .boton2:hover{
+        color: #FFFFFF;/*ok*/ 
+        background: linear-gradient(#0000FE, #00F0B8) ;/*ok*/ 
+}
+@media screen and (min-width: 1000px) {
+    .div5 {
+        clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+#pf {
+    font-size: 18px;
+    margin: 20px;
+    text-align: center;
+}
+.socialmedia {
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socialmedia a{
+    padding: 10px;
+    font-size: 18px;
+    color: #060A24;
+}
+@media screen and (max-width: 1000px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
